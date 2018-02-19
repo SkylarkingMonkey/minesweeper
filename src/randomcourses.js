@@ -4,7 +4,7 @@ const menu = {
 		_mains: [],
 		_desserts: [],
 		get appetizers() {
-			return this._appetizers
+			return this._appetizers;
 		},
 		set appetizers(appetizerIn) {
 			this._appetizers = appetizerIn;
@@ -33,16 +33,18 @@ const menu = {
 	},
 	addDishToCourse(courseName, dishName, dishPrice) {
 		const dish = {
-		get dishName() {
-			return this._dishName;
-		}
-		set dishName(dishName){
-			return this._dishName = dishName;
+			_dishName: dishName,
+			_dishPrice: dishPrice,
+			get dishName() {
+				return this._dishName;
+			}
+			set dishName(dishName){
+				return this._dishName = dishName;
+			},
+			set dishPrice(dishPrice){
+				return this._dishPrice = dishPrice;
+			},
 		},
-		set dishPrice(dishPrice){
-			return this._dishPrice = dishPrice;
-		},
-	},
 	//	this._courses['_' + courseName].push(dish);
 	//	console.log(this._courses['_' + courseName].push(dish));
 	},
