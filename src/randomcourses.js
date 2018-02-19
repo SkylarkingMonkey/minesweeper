@@ -3,23 +3,37 @@ const menu = {
 		_appetizers: [],
 		_mains: [],
 		_desserts: [],
-	},
-	get appetizers() {},
-	set appetizers(appetizerIn) {},
-	get mains() {},
-	set mains(mainsIn) {},
-	get desserts() {},
-	set desserts(dessertsIn) {},
-	get courses() {
-		return {
-			appetizers: this._courses.appetizers,
-			mains: this._courses.mains,
-			desserts: this._courses.desserts,
+		get appetizers() {
+			return this._appetizers
+		},
+		set appetizers(appetizerIn) {
+			this._appetizers = appetizerIn;
+		},
+		get mains() {
+			return this._mains;
+		},
+		set mains(mainsIn) {
+			this._mains = mainsIn;
+		},
+		get desserts() {
+			return this._desserts;
+		},
+		set desserts(dessertsIn) {
+			this._desserts = dessertsIn;
+		},
+		get courses() {
+			return {
+				appetizers: this._courses.appetizers,
+				mains: this._courses.mains,
+				desserts: this._courses.desserts,
+			}
 		}
+
 	},
 	addDishToCourse(courseName, dishName, dishPrice) {
 		const dish = {dishName, dishPrice};
 		this._courses['_' + courseName].push(dish);
+		console.log(this._courses['_' + courseName].push(dish));
 	},
 	getRandomDishFromCourse(courseName) {
 		const dishes = this._courses[courseName];
