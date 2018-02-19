@@ -40,7 +40,7 @@ const getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
   neighborOffsets.forEach(offset => {
     const neighborRowIndex = rowIndex + offset[0];
     const neighborColumnIndex = columnIndex + offset[1];
-    if (neighborRowIndex >= 0  && neighborRowIndex <= numberOfRows || neighborColumnIndex >= 0 && neighborColumnIndex <= numberOfColumns){
+    if (neighborRowIndex >= 0  && neighborRowIndex <= numberOfRows && neighborColumnIndex >= 0 && neighborColumnIndex <= numberOfColumns){
       if(bombBoard[neighborRowIndex][neighborColumnIndex] === 'B'){
         numberOfBombs +=1;
       }
@@ -65,9 +65,10 @@ const printBoard = board => {
   console.log(board.map(row => row.join(' | ')).join('\n'));
 }
 
-let playerBoard = generatePlayerBoard(10, 10);
+let playerBoard = generatePlayerBoard(15, 15);
 
-let bombBoard = generateBombBoard(10, 10, 5);
+let bombBoard = generateBombBoard(15, 15, 10);
+
 
 
 console.log('Player Board: ');
