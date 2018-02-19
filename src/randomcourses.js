@@ -32,16 +32,17 @@ const menu = {
 
 	},
 	addDishToCourse(courseName, dishName, dishPrice) {
-		const dish = {},
-		get dish() {
-			return this._dish;
+		const dish = {
+		get dishName() {
+			return this._dishName;
 		}
-		set dish(dishName){
-			return this._dish = dishName;
+		set dishName(dishName){
+			return this._dishName = dishName;
 		},
-		set dish(dishPrice){
-			return this._dish = dishPrice;
+		set dishPrice(dishPrice){
+			return this._dishPrice = dishPrice;
 		},
+	},
 	//	this._courses['_' + courseName].push(dish);
 	//	console.log(this._courses['_' + courseName].push(dish));
 	},
