@@ -31,9 +31,12 @@ const menu = {
 
 	},
 	addDishToCourse(courseName, dishName, dishPrice) {
-		const dish = {dishName, dishPrice};
-		this._courses['_' + courseName].push(dish);
-		console.log(this._courses['_' + courseName].push(dish));
+		const dish = [];
+		set dish(dishName, dishPrice){
+			return this._dish = [dishName, dishPrice];
+		}
+	//	this._courses['_' + courseName].push(dish);
+	//	console.log(this._courses['_' + courseName].push(dish));
 	},
 	getRandomDishFromCourse(courseName) {
 		const dishes = this._courses[courseName];
@@ -51,14 +54,14 @@ const menu = {
 
 };
 menu.addDishToCourse('appetizers', 'Caesar Salad', 4.25);
-menu.addDishToCourse('appetizers', 'olives', 2);
+menu.addDishToCourse('appetizers', 'olives', 3);
 menu.addDishToCourse('appetizers', 'breat', 3);
 menu.addDishToCourse('mains', 'roast lamb', 15);
 menu.addDishToCourse('mains', 'amazing sandwich', 35);
 menu.addDishToCourse('mains', 'haggis', 10);
 menu.addDishToCourse('desserts', 'chocolate orgasm', 100);
-menu.addDishToCourse('desserts', 'vanilla eh', 2);
-menu.addDishToCourse('desserts', 'hot berry crush', 4);
+menu.addDishToCourse('desserts', 'vanilla eh', 3);
+menu.addDishToCourse('desserts', 'hot berry crush', 3);
 let meal = menu.generateRandomMeal();
 console.log(menu.courses);
 console.log(menu.appetizers);
