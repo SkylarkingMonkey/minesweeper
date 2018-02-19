@@ -21,20 +21,24 @@ const menu = {
 		set desserts(dessertsIn) {
 			this._desserts = dessertsIn;
 		},
-		get courses() {
-			return {
-				appetizers: this._courses.appetizers,
-				mains: this._courses.mains,
-				desserts: this._courses.desserts,
-			}
+	},
+	get courses() {
+		return {
+			appetizers: this._courses.appetizers,
+			mains: this._courses.mains,
+			desserts: this._courses.desserts,
 		}
+
 
 	},
 	addDishToCourse(courseName, dishName, dishPrice) {
-		const dish = [];
-		set dish(dishName, dishPrice){
-			return this._dish = [dishName, dishPrice];
-		}
+		const dish = {},
+		set dish(dishName){
+			return this._dish = dishName;
+		},
+		set dish(dishPrice){
+			return this._dish = dishPrice;
+		},
 	//	this._courses['_' + courseName].push(dish);
 	//	console.log(this._courses['_' + courseName].push(dish));
 	},
