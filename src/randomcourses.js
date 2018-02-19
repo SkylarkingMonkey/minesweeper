@@ -37,17 +37,21 @@ const menu = {
 			_dishPrice: dishPrice,
 			get dishName() {
 				return this._dishName;
-			}
+			},
 			set dishName(dishName){
 				return this._dishName = dishName;
+			},
+			get dishPrice(){
+				return this._dishPrice;
 			},
 			set dishPrice(dishPrice){
 				return this._dishPrice = dishPrice;
 			},
-		},
-	//	this._courses['_' + courseName].push(dish);
-	//	console.log(this._courses['_' + courseName].push(dish));
+
+		};
+		this._courses[courseName].push(dish);
 	},
+
 	getRandomDishFromCourse(courseName) {
 		const dishes = this._courses[courseName];
 		const randomIndex = Math.floor(Math.random() * courseName.length);
