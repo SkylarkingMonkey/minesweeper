@@ -33,6 +33,9 @@ const menu = {
 	},
 	addDishToCourse(courseName, dishName, dishPrice) {
 		const dish = {},
+		get dish() {
+			return this._dish;
+		}
 		set dish(dishName){
 			return this._dish = dishName;
 		},
