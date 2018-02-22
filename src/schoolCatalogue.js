@@ -26,20 +26,18 @@ class School {
   }
 
   quickFacts(){
-    console.log('${this._name} educates ${this._numberOfStudents} students, typically between the ages of  ${this._level}');
+    console.log(`${this._name} educates ${this._numberOfStudents} students, typically between the ages of ${this._level}`);
 
   }
 
   static pickSubstituteTeacher(substituteTeachers){
-    return sutituteTeachers[Math.floor(Math.random()*substituteTeachers.length)];
+    return substituteTeachers[Math.floor(Math.random()*substituteTeachers.length)];
   }
 }
 
 class Primary extends School {
   constructor(name, numberOfStudents, pickupPolicy){
-    super(name);
-    super(level) = 'primary';
-    super(numberOfStudents);
+    super(name, 'primary', numberOfStudents);
     this._pickupPolicy = pickupPolicy;
   }
 
@@ -49,19 +47,15 @@ class Primary extends School {
 }
 
 class Middle extends School {
-  constructor(name, level, numberOfStudents){
-    super(name);
-    super(level) = 'middle';
-    super(numberOfStudents);
+  constructor(name, numberOfStudents){
+    super(name, 'middle', numsberOfStudents);
   }
 }
 
 class High extends School {
-  constructor(name, level, numberOfStudents){
-    super(name);
-    super(level) = 'high';
-    super(numberOfStudents);
-    this._sportsTeam = [];
+  constructor(name, numberOfStudents, sportsTeams){
+    super(name, 'high', numberOfStudents);
+    this._sportsTeams = sportsTeams;
   }
 
   get sportsTeams(){
@@ -71,3 +65,6 @@ class High extends School {
 
 const lorraineHansbury = new Primary('Lorraine Hansbury', 514, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.');
 console.log(lorraineHansbury.quickFacts());
+console.log(School.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J.R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli']));
+const alSmith = new High('Al E. Smith', 415, ['Baseball', 'Basketball', 'Volleyball', 'Track and Field']);
+console.log(alSmith._sportsTeams);
